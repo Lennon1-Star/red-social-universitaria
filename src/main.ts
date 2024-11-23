@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { provideRouter } from '@angular/router';
 import { AutenticacionComponent } from './app/autenticacion/autenticacion.component';  
 import { PublicacionesComponent } from './app/publicaciones/publicaciones.component';  
-  // Si tienes el componente de Feed
+
 import { PerfilComponent } from './app/perfil/perfil.component';  
 import { GruposComponent } from './app/grupos/grupos.component';  
 import { EventosComponent } from './app/eventos/eventos.component'; 
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'perfil', component: PerfilComponent },
   { path: 'grupos', component: GruposComponent },
   { path: 'eventos', component: EventosComponent },
-  // Añadir más rutas según sea necesario
+  
 ];
 
 
