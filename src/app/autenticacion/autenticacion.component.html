@@ -1,1 +1,52 @@
-<p>autenticacion works!</p>
+<div class="login-container">
+    <h2>Red Social</h2>
+    <form (ngSubmit)="login()">
+      <!-- Input de correo -->
+      <input 
+        type="email" 
+        placeholder="Correo Electrónico" 
+        [(ngModel)]="email" 
+        name="email" 
+        required 
+      />
+      <!-- Input de contraseña -->
+      <input 
+        type="password" 
+        placeholder="Contraseña" 
+        [(ngModel)]="password" 
+        name="password" 
+        required 
+      />
+      <!-- Mensaje de error -->
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+      <!-- Botón de login -->
+      <button type="submit">Entrar</button>
+    </form>
+  
+    <hr />
+  
+    <h2>Registro</h2>
+    <form (ngSubmit)="register()">
+      <!-- Input de correo -->
+      <input 
+        type="email" 
+        placeholder="Correo Electrónico" 
+        [(ngModel)]="email" 
+        name="reg-email" 
+        required 
+      />
+      <!-- Input de contraseña -->
+      <input 
+        type="password" 
+        placeholder="Contraseña" 
+        [(ngModel)]="password" 
+        name="reg-password" 
+        required 
+      />
+      <!-- Mensaje de error -->
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+      <!-- Botón de registro -->
+      <button type="submit">Registrarse</button>
+    </form>
+  </div>
+  
