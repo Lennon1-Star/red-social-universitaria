@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "red-social-universitaria": {
+    "red-social": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/red-social-universitaria",
+            "outputPath": "dist/red-social",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -29,12 +29,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -46,8 +41,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"
@@ -64,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "red-social-universitaria:build:production"
+              "buildTarget": "red-social:build:production"
             },
             "development": {
-              "buildTarget": "red-social-universitaria:build:development"
+              "buildTarget": "red-social:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -99,6 +94,6 @@
     }
   },
   "cli": {
-    "analytics": "922e45d2-c62c-44c8-aed8-4d0f820bfb23"
+    "analytics": false
   }
 }

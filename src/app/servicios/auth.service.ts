@@ -5,6 +5,8 @@ import { FirebaseTSFirestore, Limit, OrderBy } from "firebasets/firebasetsFirest
 import { environment } from '../../environment/environment prod';
 import { BehaviorSubject } from 'rxjs';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -28,7 +30,12 @@ export class AuthService {
   userStatus$ = this.userStatus.asObservable(); // Exponemos el observable
 
   constructor() {
-    FirebaseTSApp.init(environment.firebaseConfig);
+    
+    // Verifica si Firebase ya está inicializado
+// Verifica si ya hay una instancia de Firebase
+
+  FirebaseTSApp.init(environment.firebaseConfig);
+
     this.auth = new FirebaseTSAuth();
     this.firestore = new FirebaseTSFirestore();
     this.getPosts()

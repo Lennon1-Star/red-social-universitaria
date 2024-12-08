@@ -1,4 +1,12 @@
-<div>
-  <h1></h1>
-  <router-outlet></router-outlet>  <!-- Aquí se renderizarán los componentes de las rutas -->
-</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<app-header *ngIf="isUserLoggedIn"></app-header>
+<app-autenticacion *ngIf="!isUserLoggedIn"></app-autenticacion>
+<router-outlet />

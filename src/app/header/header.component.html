@@ -1,0 +1,15 @@
+<body>
+    <header>
+      <div class="logo">Red Social</div>
+      <nav class="menu">
+        <a href="#home">Inicio</a>
+        <a href="#profile">Perfil</a>
+        <a href="#settings">Configuración</a>
+        <a href="#notifications">Notificaciones</a>
+      </nav>
+      <div class="user-info">
+        <span>Hola, <strong>{{userData.nombre}}</strong></span>
+        <button  (click)="cerrarsesion()" class="logout-btn">Cerrar sesión</button>
+      </div>
+    </header>
+  </body>
