@@ -1,11 +1,12 @@
 <div class="login-container">
+  <div *ngIf="isLoginState()">
     <h2>Red Social</h2>
-    <form (ngSubmit)="login()">
+    <form   >
     
       <input 
         type="email" 
         placeholder="Correo Electrónico" 
-        [(ngModel)]="email" 
+        [(ngModel)]="emaill" 
         name="email" 
         required 
       />
@@ -13,40 +14,87 @@
       <input 
         type="password" 
         placeholder="Contraseña" 
-        [(ngModel)]="password" 
+        [(ngModel)]="passwordl" 
         name="password" 
         required 
       />
+      
      
       <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
       <!-- Botón de login -->
-      <button type="submit">Entrar</button>
+      <button  (click)="login()" type="button">Entrar</button>
+      <p>¿Contraseña olvidada?  <a (click)="ForgotPassClick() "> Recupera aqui </a>  </p> 
+      <a> ¿No tienes cuenta?  <a (click)="CreateAccountClick() "> Registrate  aqui </a>  </a> 
     </form>
+  </div>
+  
   
     <hr />
-  
-    <h2>Registro</h2>
-    <form (ngSubmit)="register()">
-     
-      <input 
-        type="email" 
-        placeholder="Correo Electrónico" 
-        [(ngModel)]="email" 
-        name="reg-email" 
-        required 
-      />
-    
-      <input 
-        type="password" 
-        placeholder="Contraseña" 
-        [(ngModel)]="password" 
-        name="reg-password" 
-        required 
-      />
+
+    <div *ngIf=" isRegisterState()">
+      <h2>Registro</h2>
+      <form   >
+        <input 
+          type="text" 
+          placeholder="Nombre" 
+          [(ngModel)]="nombrer" 
+          name="reg-email" 
+          required 
+        />
+        <input 
+          type="text" 
+          placeholder="Apellidos" 
+          [(ngModel)]="apellidor" 
+          name="reg-email" 
+          required 
+        />
+       
+        <input 
+          type="email" 
+          placeholder="Correo Electrónico" 
+          [(ngModel)]="emailr" 
+          name="reg-email" 
+          required 
+        />
       
-      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
-     
-      <button type="submit">Registrarse</button>
-    </form>
+        <input 
+          type="password" 
+          placeholder="Contraseña" 
+          [(ngModel)]="passwordr" 
+          name="reg-password" 
+          required 
+        />
+        
+        <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+       
+        <button  (click)="register()" type="button">Registrarse</button>
+        <a> ¿Ya tienes cuenta?  <a (click)="LoginClick()"> Inicia Sesión aqui </a>  </a> 
+      </form>
+    </div>
+  
+    
+
+
+    <div  *ngIf="isForgotPasswordState()">
+      <h2>Recuperar contraseña</h2>
+      <form  >
+       
+        <input 
+          type="email" 
+          placeholder="Correo Electrónico" 
+          [(ngModel)]="emailc" 
+          name="reg-email" 
+          required 
+        />
+      
+    
+        
+        <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+       
+        <button   (click)="recuperar()" type="button">Recuperar</button>
+         <a   (click)="LoginClick()"> Inicia Sesión aqui </a> 
+      </form>
+    </div>
+   
   </div>
   

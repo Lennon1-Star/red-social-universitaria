@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';  
-import { CommonModule } from '@angular/common';  
+import { EmailValidator, FormsModule } from '@angular/forms';  
+import { CommonModule, NgIf } from '@angular/common';  
 
 @Component({
   selector: 'app-autenticacion',
@@ -8,20 +8,28 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./autenticacion.component.css'],
 
   standalone: true,  
-  imports: [FormsModule, CommonModule]  
+  imports: [FormsModule, CommonModule, NgIf]  
 })
 export class AutenticacionComponent {
-  
-  email: string = '';
-  password: string = '';
+  state = LoginCompState.LOGIN;
+  //login
+  emaill: string = '';
+  passwordl: string = '';
   errorMessage: string = '';
+  //registro
+  emailr: string = '';
+  passwordr: string = '';
+  nombrer: string = '';
+  apellidor: string = '';
+  //recuperar contr
+  emailc: string = '';
   
 
   
   login() {
     
-    if (this.email && this.password) {
-      console.log('Login con', this.email);
+    if (this.emaill && this.passwordl) {
+      console.log('mail', this.emaill, "pass: ", this.passwordl);
       
       this.errorMessage = '';
     } else {
@@ -32,12 +40,49 @@ export class AutenticacionComponent {
   
   register() {
     
-    if (this.email && this.password) {
-      console.log('Registrando usuario con', this.email);
+    if (this.nombrer && this.apellidor && this.emailr && this.passwordr) {
+      console.log('mail', this.emailr, "pass: ", this.passwordr, this.nombrer, this.apellidor);
       
       this.errorMessage = '';
     } else {
       this.errorMessage = 'Por favor ingresa tu correo y contraseña.';
     }
   }
+  recuperar(){
+    if(this.emailr){
+      console.log(this.emailr)
+    }
+
+  }
+
+
+
+
+
+
+  ForgotPassClick() {
+    this.state = LoginCompState.FORGOT_PASSWORD;
+  }
+  CreateAccountClick() {
+    this.state = LoginCompState.REGISTER;
+  }
+  LoginClick() {
+    this.state = LoginCompState.LOGIN;
+  }
+
+  isLoginState() {
+    return this.state == LoginCompState.LOGIN;
+  }
+  isRegisterState() {
+    return this.state == LoginCompState.REGISTER;
+  }
+  isForgotPasswordState() {
+    return this.state == LoginCompState.FORGOT_PASSWORD;
+  }
+}
+export enum LoginCompState {
+  LOGIN,
+  REGISTER,
+  FORGOT_PASSWORD
+
 }
