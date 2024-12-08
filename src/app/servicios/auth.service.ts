@@ -156,7 +156,7 @@ export class AuthService {
       },
     });
   }
-  registro(email: string, pass: string, nombre: string, apellido: string, carrera: string) {
+  registro(email: string, pass: string, nombre: string, apellido: string) {
 
     this.auth.createAccountWith({
       email: email,
@@ -173,7 +173,6 @@ export class AuthService {
             userId: id,
             nombre: nombre,
             apellido: apellido,
-            carrera: carrera,
             fotoUrl: "https://devmiasx.com/uploads/67380645a9ac3_user.png",
             privacidad: "publico",
 

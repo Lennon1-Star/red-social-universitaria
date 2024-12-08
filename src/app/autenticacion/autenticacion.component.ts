@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { EmailValidator, FormsModule } from '@angular/forms';  
 import { CommonModule, NgIf } from '@angular/common';  
+import { AuthService } from '../servicios/auth.service';
 
 @Component({
   selector: 'app-autenticacion',
@@ -23,6 +24,10 @@ export class AutenticacionComponent {
   apellidor: string = '';
   //recuperar contr
   emailc: string = '';
+
+  constructor(private authService: AuthService){
+
+  }
   
 
   
@@ -30,6 +35,7 @@ export class AutenticacionComponent {
     
     if (this.emaill && this.passwordl) {
       console.log('mail', this.emaill, "pass: ", this.passwordl);
+      this.authService.login(this.emaill, this.passwordl)
       
       this.errorMessage = '';
     } else {
@@ -41,9 +47,8 @@ export class AutenticacionComponent {
   register() {
     
     if (this.nombrer && this.apellidor && this.emailr && this.passwordr) {
-      console.log('mail', this.emailr, "pass: ", this.passwordr, this.nombrer, this.apellidor);
-      
-      this.errorMessage = '';
+      //regitsotr
+      this.authService.registro(this.emailr, this.passwordr,this.nombrer, this.apellidor);
     } else {
       this.errorMessage = 'Por favor ingresa tu correo y contraseña.';
     }
