@@ -1,4 +1,4 @@
-URL:https://redsocial-9baa3.web.app
+URL: redsocial-9baa3.firebaseapp.com
 
 # RedSocial
 
