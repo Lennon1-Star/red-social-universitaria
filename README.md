@@ -1,8 +1,12 @@
+<<<<<<< HEAD
  HEAD
 URL: https://redsocial-9baa3.firebaseapp.com/
 
 URL:https://redsocial-9baa3.web.app
  95cc520 (URL)
+=======
+URL: redsocial-9baa3.firebaseapp.com
+>>>>>>> 06c88b6 (url)
 
 # RedSocial
 
