@@ -2,11 +2,6 @@
 URL: https://redsocial-9baa3.firebaseapp.com/
 
 
-![Uploading Captura de pantalla 2024-12-16 222701.png…]()
-
-
-
-
 # RedSocial
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.1.
