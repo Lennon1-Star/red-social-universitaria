@@ -2,8 +2,9 @@
 URL: https://redsocial-9baa3.firebaseapp.com/
 
 
- pagina del Login
- ![Uploading image.png…]()
+![Uploading Captura de pantalla 2024-12-16 222701.png…]()
+
+
 
 
 # RedSocial
