@@ -90,3 +90,15 @@ body, html {
     margin: 20px 0;
   }
   
+
+  .link {
+    text-decoration: none; 
+    color: #e5dfa5; 
+    cursor: pointer; 
+    transition: text-decoration 0.2s ease-in-out; 
+  }
+  
+  
+  .link:hover {
+    text-decoration: underline; 
+  }

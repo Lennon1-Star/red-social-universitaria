@@ -21,10 +21,16 @@
       
      
       <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
-      <!-- Botón de login -->
-      <button  (click)="login()" type="button">Entrar</button>
-      <p>¿Contraseña olvidada?  <a (click)="ForgotPassClick() "> Recupera aqui </a>  </p> 
-      <a> ¿No tienes cuenta?  <a (click)="CreateAccountClick() "> Registrate  aqui </a>  </a> 
+  
+      <button (click)="login()" type="button">Entrar</button>
+      <p>
+        ¿Contraseña olvidada?
+        <a class="link" (click)="ForgotPassClick()">Recupera aquí</a>
+      </p>
+      <p>
+        ¿No tienes cuenta?
+        <a class="link" (click)="CreateAccountClick()">Regístrate aquí</a>
+      </p>
     </form>
   </div>
   
